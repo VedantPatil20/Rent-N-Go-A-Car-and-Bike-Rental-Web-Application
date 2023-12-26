@@ -1,7 +1,16 @@
+using Rent_N_Go_A_Car_and_Bike_Rental_Web_Application.Extension;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// 
+builder.Services.AddControllers().AddJsonOptions(options =>
+    options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+// 
+builder.Services.AddAppSetting();
 
 var app = builder.Build();
 
